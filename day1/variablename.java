@@ -1,3 +1,5 @@
+package day1;
+
 public class variablename {
     public static void main(String[] args) {
         //定义变量

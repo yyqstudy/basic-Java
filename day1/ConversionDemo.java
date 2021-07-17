@@ -1,3 +1,5 @@
+package day1;
+
 public class ConversionDemo {
     public static void main(String[] args) {
         //自动类型转换

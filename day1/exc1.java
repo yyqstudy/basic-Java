@@ -1,3 +1,5 @@
+package day1;
+
 public class exc1 {
     /* 这是main方法
     main方法是程序的入口方法，代码执行是从main方法开始的

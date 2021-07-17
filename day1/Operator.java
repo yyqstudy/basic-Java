@@ -1,3 +1,5 @@
+package day1;
+
 public class Operator {
     public static void main(String[] args) {
         //算术运算符
