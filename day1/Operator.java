@@ -30,6 +30,20 @@ public class Operator {
         //字符串'+' 从左到右执行
         System.out.println("Yale"+"MIT");
         System.out.println(2021+"MIT");
+        System.out.println("---------");//*****要打双引号
+        System.out.println("赋值'='操作");
+
+
+
+        //赋值运算符 =
+        int p = 10; //把10赋值给i
+        System.out.println("p:"+p);
+        p += 20; //i= i + 20 但是两者不等价，扩展运算符隐含类型转换
+        System.out.println("p:"+p);
+
+
+
+        
 
 
     }
