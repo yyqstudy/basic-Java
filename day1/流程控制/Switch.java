@@ -1,5 +1,9 @@
 package day1.流程控制;
 /*switch语句
+
+***重要***  与if…elseif…else的区别：等值情况一般用switch，而判断条件为区间情况一般用if…elseif…else
+
+
 格式：
     switch（表达式）{
       case 值1：
@@ -14,6 +18,7 @@ package day1.流程控制;
       ……
       default：
           语句体n+1；
+          break;(这个break可以省略）
        }
 
      执行流程：
