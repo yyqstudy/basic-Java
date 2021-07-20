@@ -1,4 +1,4 @@
-package 数组;
+package day1.数组;
 
 /*
 数组array是一种用于存储多个、相同类型数据的存储模型

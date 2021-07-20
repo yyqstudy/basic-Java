@@ -1,4 +1,4 @@
-package 数组;
+package day1.数组;
 //多个数组指向相同
 //当两个数组指向相同时，任何一个数组修改了堆内存的数据（new int[]），另外一个数组去访问时，它的元素值也会发生改变
 public class Multi_Array_sameAddr {

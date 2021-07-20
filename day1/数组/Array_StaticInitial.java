@@ -1,4 +1,4 @@
-package 数组;
+package day1.数组;
 
 /*
 静态初始化：

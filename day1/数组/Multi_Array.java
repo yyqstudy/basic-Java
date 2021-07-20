@@ -1,4 +1,4 @@
-package 数组;
+package day1.数组;
 
 public class Multi_Array {
     public static void main(String[] args) {
