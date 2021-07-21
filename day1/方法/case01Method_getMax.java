@@ -30,7 +30,7 @@ case:设计一个方法用于打印两个数中的较大数
 
  */
 
-public class Method_getMax {
+public class case01Method_getMax {
     public static void main(String[] args) {
         //在main()方法中调用定义好的方法
         getMax();
