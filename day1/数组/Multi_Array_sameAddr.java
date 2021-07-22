@@ -15,9 +15,9 @@ public class Multi_Array_sameAddr {
 
         //定义第二个数组指向第一个数组
         int[] arr2 = arr;//此时arr2与arr的内存地址相同了
-        arr[0] = 111;
-        arr[1] = 222;
-        arr[2] = 333;
+        arr2[0] = 111;
+        arr2[1] = 222;
+        arr2[2] = 333;
         //输出两个数组的名及元素
         System.out.println(arr);
         System.out.println(arr[0]);
