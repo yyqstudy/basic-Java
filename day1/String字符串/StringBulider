@@ -1,0 +1,22 @@
+StringBuilder:是一个可变的字符串，可以看作是一个容器
+这里的可变是StringBuilder对象中内容是可变的
+String和StringBuilder的区别：
+	String的内容是不可变的
+	StringBuilder的内容是可变的
+
+构造方法
+public StringBuilder()--无参--创建一个空白可变字符串对象，不含有任何内容
+public StringBuilder(String str)--带参数--根据字符串的内容，来创建可变字符串对象
+
+
+添加和反转
+public StringBuilder append(任意类型):添加数据，并返回自身对象
+public StringBuilder reverse()：返回相反的字符序列
+
+
+StringBuilder和String的相互转换
+
+StringBuilder转换为String
+public String toString():通过toString()就可以实现把StringBuilder转成String
+String转换为 StringBuilder
+public StringBuilder(String str):通过构造方法就可以实现把String转成StringBuilder

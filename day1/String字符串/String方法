@@ -1,0 +1,4 @@
+方法名
+public boolean equals(Object anObject)  比较字符串内容，严格区分大小写
+public char charAt(int index) 返回指定索引处的char值
+public int length() 返回此字符串的长度
