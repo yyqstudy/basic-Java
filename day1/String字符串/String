@@ -1,0 +1,16 @@
+String
+string类在java.lang包下，所以使用的时候不需要导包
+string类代表字符串，Java中所有双引号字符串，都是string类
+
+字符串的特点
+字符串不可变，它们的值在创建后不能被更改
+字符串的值可以共享
+字符串效果上相当于字符数组char[]，但是底层原理是字节数组byte[]
+
+得到string对象
+1、构造方法
+public String() 创建一个空白的字符串，不含有任何内容
+public String(char[] chs) 根据字符数组的内容，来创建字符串的对象
+public String(byte[] bys) 根据字节数组的内容，来创建字符串的对象
+2、直接赋值
+String s = "abc"; 直接赋值来创建字符串，内容就是abc
