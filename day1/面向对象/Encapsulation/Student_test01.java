@@ -6,7 +6,7 @@ public class Student_test01 {
     //int age;
     //不同点**private**
     private int age;
-    //提供get/set方法
+    //提供set方法
     public void setAge(int a){
         //age = a;
         if(a<0 || a>120){
@@ -16,6 +16,7 @@ public class Student_test01 {
         }
 
     }
+    //提供get方法
     public int getAge(){
         return age;
     }
