@@ -1,6 +1,6 @@
 package week2.继承.Demo2_variable;
 
-public class Son_variable extends Father_variable {
+public class Subclass_variable extends Superclass_variable {
     //身高
     public int height = 175;
     //年龄

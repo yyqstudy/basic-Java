@@ -1,8 +1,8 @@
 package week2.继承.Demo3_super关键字;
 
-import week2.继承.Demo2_variable.Father_variable;
+import week2.继承.Demo2_variable.Superclass_variable;
 
-public class Son_super extends Father_variable {
+public class Subclass_super extends Superclass_variable {
 
     //年龄
     public int age = 20;

@@ -6,10 +6,10 @@ package week2.继承.Demo1;
 public class TestDemo {
     public static void main(String[] args) {
         //创建对象，调用方法
-        Father f = new Father();
+        Superclass f = new Superclass();
         f.show();
 
-        Son s = new Son();
+        Subclass s = new Subclass();
         s.method();
         s.show();//在Son.java中public class Son extends Father，此时可以调用show()
     }
