@@ -8,15 +8,15 @@ package week2.多态Polymorphism;
 2）有方法重写---override
 3）有父类引用指向子类对象
  */
-public class AnimalTest {
+/*public class AnimalTest {
     public static void main(String[] args) {
         //有父类引用指向子类对象
         Animal a = new Cat();
         System.out.println(a.age);
-        /*多态访问成员对象，编译与运行都看Animal a = new Cat();的左边Animal
+        *//*多态访问成员对象，编译与运行都看Animal a = new Cat();的左边Animal
         Animal没有weight所以报错
         输出的是Animal a的年龄而不是cat的年龄
-*/
+*//*
         //System.out.println(a.weight);//报错
 
         //访问成员方法--也是看Animal里面有没有，但是运行结果看Cat，即右边，输出的是Cat eat fish
@@ -24,5 +24,18 @@ public class AnimalTest {
         //a.playGame();//报错
 
 
+    }
+}*/
+
+
+public class AnimalTest {
+    public static void main(String[] args) {
+        //创建动物操作类的对象，调用方法
+        AnimalOperator ao = new AnimalOperator();
+        Cat c = new Cat();//创建Cat对象
+        ao.useAnimal(c);
+
+        Dog d = new Dog();
+        ao.useAnimal(d);
     }
 }
