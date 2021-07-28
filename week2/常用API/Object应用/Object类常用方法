@@ -1,0 +1,9 @@
+
+public String toString()
+返回对象的字符串表示形式；建议所有子类重写（覆盖）该方法，自动生成
+
+public boolean equals(Object obj)
+比较对象是否相等；默认比较地址，重写可以比较内容，自动生成
+
+看方法的源码--点println--Go to --Declaration
+          --command+B

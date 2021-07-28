@@ -1,0 +1,22 @@
+array包含用于操作数的各种方法
+
+方法名
+
+要导包 import java.util.Arrays;
+Arrays构造方法--private Arrays() {}--无参数构造--不能创建对象，但是可以强制通过class访问（static）
+
+工具类设计思想：
+构造方法用private修饰---防止外界构造对象
+成员用public static修饰---使用类名访问该成员方法
+比如
+Math;
+System;
+Arrays;
+
+
+
+public static String toString(int[] arr)
+数组的内容，以字符串形式返回
+
+public static void sort(int[] arr)
+按照数字顺序排列数组

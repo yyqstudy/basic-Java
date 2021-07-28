@@ -1,6 +1,8 @@
 接口是一种公共的规范标准
 Java 中接口体现在------对行为的抽象
 
+创建接口文件--类型选new-java class-interface
+------------------------------------
 接口的特点
 (1)接口用关键字interface修饰
     public interface 接口名{}
@@ -32,3 +34,66 @@ Java 中接口体现在------对行为的抽象
 
   public abstract class Rabbit implements JumppingInterface {
   }
+
+  ------------------------------------
+
+  接口的成员特点
+
+  成员变量
+  只能是常量
+  默认修饰符：public static final
+  接口中的成员变量默认final修饰，无法再次赋值
+  成员变量默认静态修饰，通过格式：接口名.变量 直接访问
+
+  构造方法
+  接口无构造方法，因为接口主要是对行为进行抽象，是没有具体存在
+  如果一个类没有父类，就默认继承object类
+  在接口.java无法构造方法，可是在子类确定可以构造方法，而且出现super()，为什么
+  class object : 如果一个类没有父类，就默认把object作为父类
+                 如果有父类，object作为间接父类存在
+
+    public class Kangaroo implements JumppingInterface
+    等价于
+    public class Kangaroo extends Object implements JumppingInterface
+
+
+  成员方法
+  接口里面只能是抽象类方法
+  默认修饰符 public abstract
+
+  ------------------------------------
+  类与接口关系
+
+ 类与类之间:继承关系,一个类只能单继承,但是支持多层继承
+ 类与接口之间:只有实现关系,可以单实现，可以多实现，还可以继承一个类同时实现多个接口
+ 接口与接口之间:只有继承关系,可以单继承，也可以多继承，一个接口可以继承多个接口
+ 举例：
+ 接口：
+ Interface01
+ Interface02
+ Interface03
+
+ class:
+ InterDemo
+
+ //继承一个类同时实现多个接口
+ public class InterDemo extends Object implements Interface01,Interface02,Interface03{}
+
+ //接口可以继承多个接口
+ public interface Interface01 extends Interface02,Interface03{}
+
+------------------------------------
+抽象类与接口的区别
+
+成员区别
+  抽象类   变量、常量、有构造方法、也有非抽象方法
+  接口     常量、抽象方法
+
+关系区别
+类与类      继承，单继承
+类与接口    实现，单实现、多实现
+接口与接口   继承，单继承、多继承
+
+设计理念的区别*****重要
+抽象类       对类抽象，包括属性、行为
+接口        对行为抽象，主要是行为
