@@ -1,0 +1,62 @@
+
+将基本数据类型封装成对象好处是在于可以在对象中定义更多的功能方法操作该数据
+
+常用操作：基本数据类型与字符串的转换
+基本数据类型  包装类
+   byte		Byte
+   short	Short
+    char	Character
+    int		Integer
+    long	Long
+   float	Float
+   double	Double
+
+----------------------------------
+Integer类概述与使用
+
+静态方法获取对象
+
+int---Integer
+public static Integer valueOf(int i)
+返回---指定int值的integer实例
+格式
+Integer.valueOf(i)
+
+intValue（）方法----把Integer类型转化为Int类型
+
+string---Integer
+public static Integer valueOf(String s)
+返回一个保存指定值Integer对象string（字符串必须由数字组成，否则报错）
+
+格式
+Integer.valueOf(s)
+
+-----------------------------------
+int 与 string相互转换
+
+1、int转换为String
+public static String valueOf(int i)
+返回int参数的字符串表示形式，该方法是String类中方法
+
+格式：String.valueOf()
+
+
+2、String转换成int
+public static int parseInt(String s)
+将字符串解析为int类型，该方法是Integer中的方法
+
+格式：Integer.parseInt()
+
+-----------------------------------
+自动装箱autoboxing
+把基本数据类型转换为对应的包装类类型
+
+Integer i = 100;
+
+拆箱unboxing
+把包装类类型转换为对应的基本数据类型
+
+i += 200; // i = i+200; i+200 自动拆箱；i= i+200 自动装箱
+
+⚠️ 在使用包装类类型时候，如果做操作，最好判断是否为null
+  只要是对象，在使用之前必须进行不为null的判断

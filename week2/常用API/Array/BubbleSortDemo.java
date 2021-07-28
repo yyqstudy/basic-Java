@@ -52,7 +52,7 @@ public class BubbleSortDemo {
     }
 
     //定义方法--把数组元素组成一个字符串[元素1,元素2，……]
-    //两个明确：参数--数组；返回值--string--在循环外面
+    //两个明确：参数--int类型数组；返回值--string--在循环外面
     public static String arrayToString(int[] arr){
         StringBuilder strb =new StringBuilder();
         strb.append("[");
