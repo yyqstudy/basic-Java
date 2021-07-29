@@ -1,0 +1,20 @@
+增强for（for each循环）
+简化数组和集合的遍历
+内部是一个Iterator迭代器--不能用add()，会出现并发处理异常
+
+
+之前----用到for i，需要结合index操作
+现在----
+格式：
+for(元素的数据类型  变量 : Collection集合or数组){
+       //变量
+}
+
+范例：
+
+int[] arr = {1,2,3,4};
+for(int i: arr){
+   System.out.println(i);
+}
+----------------------
+案例---List中的Case_List_Student里面三种遍历

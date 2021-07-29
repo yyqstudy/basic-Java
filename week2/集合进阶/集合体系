@@ -20,10 +20,11 @@ collection
 单列集合的顶层接口，表示一组对象
 JDK不提供collection接口直接实现，它提供更具体的子接口（Set和List）实现
 
-创建Collection集合对象
+***创建Collection集合对象***
 多态方式
 具体实现类ArrayList
 
+Collection<String> c = new ArrayList<String>();
 ------------------------------------
 collection常用方法
 

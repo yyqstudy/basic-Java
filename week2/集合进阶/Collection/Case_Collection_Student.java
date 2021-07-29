@@ -17,7 +17,7 @@ import java.util.Collection;
 import java.util.Iterator;
 
 //测试类
-public class Case_Student {
+public class Case_Collection_Student {
     public static void main(String[] args) {
         //创建Collection集合对象
         Collection<StudentClass> c = new ArrayList<StudentClass>();
