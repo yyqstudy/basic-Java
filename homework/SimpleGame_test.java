@@ -1,4 +1,4 @@
-package 作业;
+package homework;
 
 
 //出现的问题思考--在定义方法里面，不需要scanner录入数据--录入数据全部在main()实现
@@ -44,7 +44,7 @@ public class SimpleGame_test {
                 int integers = sc.nextInt();
                 // digitsSum(integers);
                 System.out.println("sum:" + digitsSum(integers));
-                break;
+                //break;
             } else {
                 System.out.println("Please enter the right numbers as required");
             }
@@ -54,24 +54,30 @@ public class SimpleGame_test {
 
     //converting time  HH:mm:ss
     public static String convertTime(int seconds) {
-        //定义三个变量
-        int hour = 0;
-        int minute = 0;
-        int second = 0;
-        hour = seconds / 3600;
-        int pre = seconds % 3600;
-        minute = pre / 60;
-        second = pre % 60;
-        return pre1(String.valueOf(hour))
-                .concat(":")
-                .concat(pre1(String.valueOf(minute)))
-                .concat(":")
-                .concat(pre1(String.valueOf(second)));
+        if(seconds <0){
+            return (String.valueOf(seconds))
+                    .concat(":")
+                    .concat((String.valueOf(seconds)))
+                    .concat(":")
+                    .concat((String.valueOf(seconds)));
+        }else{
+            //定义三个变量
+            int hour = 0;
+            int minute = 0;
+            int second = 0;
+            hour = seconds / 3600;
+            int pre = seconds % 3600;
+            minute = pre / 60;
+            second = pre % 60;
+            return (String.valueOf(hour))
+                    .concat(":")
+                    .concat((String.valueOf(minute)))
+                    .concat(":")
+                    .concat((String.valueOf(second)));
+        }
     }
 
-    private static String pre1(String a) {
-        return a.length() == 1 ? "0".concat(a) : a;
-    }
+
 
     //digitsSum 取出个位十位百位
     public static String digitsSum(int integers) {

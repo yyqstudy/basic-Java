@@ -1,0 +1,72 @@
+集合类体系结构
+集合
+单列：collection：List可重复（ArrayList和LinkedList） 、Set不可重复（HashSet和TreeSet）
+双列：Map：HashMap
+
+接口：collection、List、Set、Map
+实现类：ArrayList和LinkedList、HashSet和TreeSet、HashMap
+
+集合的体系结构：
+ 	由于不同的数据结构（数据的组织，存储方式），所以Java为我们提供了不同的集合，
+ 	但是不同的集合他们的功能都是相似，不断的向上提取，将共性抽取出来，这就是集合体系结构形成的原因
+
+ 体系结构：
+		怎么学习?最顶层开始学习，因为最顶层包含了所有的共性
+ 		怎么使用？使用最底层，因为最底层就是具体的实现
+
+------------------------------------
+
+collection
+单列集合的顶层接口，表示一组对象
+JDK不提供collection接口直接实现，它提供更具体的子接口（Set和List）实现
+
+创建Collection集合对象
+多态方式
+具体实现类ArrayList
+
+------------------------------------
+collection常用方法
+
+boolean add(Object e): 向集合中添加元素
+void clear():清空集合中所有元素
+boolean contains(Object o):判断集合中是否包含某个元素
+boolean isEmpty():判断集合中的元素是否为空
+boolean remove(Object o):根据元素的内容来删除某个元素
+int size():获取集合的长度
+Object[] toArray():能够将集合转换成数组并把集合中的元素存储到数组中
+
+------------------------------------
+collection集合的遍历
+
+Collection集合元素的通用获取方式：
+在取元素之前先要判断集合中有没有元素，如果有，就把这个元素取出来，继续在判断，如果还有就再取出出来。
+一直把集合中的所有元素全部取出。这种取出方式专业术语称为迭代。
+集合中把这种取元素的方式描述在Iterator接口中-----iterator()
+Iterator接口的常用方法如下
+hasNext（）方法：判断集合中是否有元素可以迭代
+next（）方法：用来返回迭代的下一个元素，并把指针向后移动一位。
+
+
+在main方法内实现遍历集合
+ public static void main(String[] args) {
+    Collection<String> c = new ArrayList<String>();
+     c.add("hello");
+
+    Iterator<String> it = c.iterator();
+    while(it.hasNext()){
+       String s = it.next();
+       System.out.println(s);
+    }
+}
+
+集合使用步骤
+1、创建集合对象
+2、添加元素到集合
+3、遍历集合
+  通过集合对象获取迭代器对象
+  通过迭代器对象的hasNext()方法判断是否还有元素
+  通过迭代器对象的Next()方法获取下一个元素
+
+-----------------------------------
+
+

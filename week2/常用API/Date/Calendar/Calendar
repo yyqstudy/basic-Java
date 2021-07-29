@@ -1,0 +1,15 @@
+Calendar是日历类，在Date后出现，替换掉了许多Date的方法。该类将所有可能用到的时间信息封装为静态成员变量，方便获取。
+Calendar为抽象类，由于语言敏感性，Calendar类在创建对象时并非直接创建，而是通过静态方法创建，将语言敏感内容处理好，再返回子类GregorianCalendar对象，如下：
+Calendar类静态方法
+
+Calendar为某一些时刻和一组日历字段之间提供一些转换方法，并为操作日历字段提供一些方法
+Calendar提供一个类方法getInstance用于获取Calendar对象，其日历字段已使用当前日期和时间初始化
+
+Calendar c = Calendar.getInstance();  //返回当前时间
+
+-----------------------------
+Calendar的常用方法
+
+public int get(int field)  返回给定的日历
+public abstract void add(int field, int amount) 根据日历，将指定的时间量添加或减去给定的日历
+public final void set(int year,int month,int date) 设置当前的日历的年月日

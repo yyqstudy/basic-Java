@@ -1,4 +1,4 @@
-package week2.常用API.Date.case01;
+package week2.常用API.Date.case01SimpleDateFormat;
 
 import java.text.ParseException;
 import java.util.Date;

@@ -1,4 +1,4 @@
-package week2.常用API.Date.case01;
+package week2.常用API.Date.case01SimpleDateFormat;
 /*
 要求：
 定义一个日期工具类（DateUtils),包含两个方法：把日期转换为指定格式的字符串；把字符串解析为指定格式的日期
@@ -14,8 +14,6 @@ package week2.常用API.Date.case01;
 4、定义测试类DateTest，调用日期工具类中的方法
 
  */
-
-import week2.常用API.Date.SimpleDateFormatDemo;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

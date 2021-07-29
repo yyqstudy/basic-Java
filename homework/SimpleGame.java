@@ -1,4 +1,4 @@
-package 作业;
+package homework;
 /*
 出现的问题思考
 在定义方法里面，不需要scanner录入数据--录入数据全部在main()实现
