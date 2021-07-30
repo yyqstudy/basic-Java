@@ -1,0 +1,18 @@
+分析三个月内
+SQL（SQLserver、Mysql）
+JavaWeb（jsp+servlet、不分离的前后端）（html、css、js）
+效果：从页面访问到数据库的数据查出来然后展示。
+框架 SpringMVC、Springboot、Mybatis（ssm）
+control（控制层）、service、dao
+Spring（面向切面编程AOP、控制反转loc）
+
+前端：
+JQuery、js
+框架：
+Layui（pc）、mui（手机）、高端（vue、nodejs）
+
+其他东西：（独立项目部署）
+nginx、recdis、
+设计模式21：框架底层设计原理
+
+linux：后台程序部署的位置，基础命令、

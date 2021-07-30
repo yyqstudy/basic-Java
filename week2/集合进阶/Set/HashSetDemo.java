@@ -18,6 +18,8 @@ public class HashSetDemo {
         hs.add("Monica");
         hs.add("Friends Actress");
 
+        System.out.println("hello".hashCode());
+
         //traversal
         for (String s:hs) {
             System.out.println(s);
