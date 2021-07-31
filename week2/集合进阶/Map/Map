@@ -1,0 +1,70 @@
+
+Map集合
+Interface Map<K,V> --- K:key , V：value
+key映射value
+没有重复的key，一个key只能最多对应一个value
+
+创建Map集合对象
+多态方式
+具体的实现类HashMap
+eg.
+Map<Key,Value> map = new HashMap<Key,Value>();
+
+添加元素方法：V put(K key, V value)--- 输出： key=value
+eg.
+map.put("001","air");
+
+同一个key，会自动输出之后的value，之前的会删掉
+
+--------------------------
+Map集合基本功能（MapDemo02.java)
+
+
+V put(K key, V value)：添加元素
+V remove(Object key)：根据指定的key删除key-value pairs
+void clear()：清空Map集合中所有的key-value pairs
+boolean containsKey(Object key):判断Map集合中是否包含键为key的key-value pairs
+boolean containsValue(Object value):判断Map集合中是否包含值为value的key-value pairs
+boolean isEmpty() : 判断集合是否为空
+int size():返回Map中key-value pairs的个数
+
+--------------------------
+
+Map获取功能：
+
+V get(Object key):根据key获取value
+Set<K> keySet():获取所有key的集合
+Collection<V> values():获取所有value的集合
+Set<Map.Entry<K,V>> entrySet()：获取所有key-value pairs
+
+应用于遍历
+
+--------------------------
+Map遍历
+两种方法
+方法一：遍历Map集合操作：
+    1、获取所有key的集合---keySet()
+    2、遍历key集合，获取到每一个key---for each()
+    3、根据key获取value---get(object key)
+方法二：
+    1、获取所有key-value pairs的集合---Set<Map.Entry<K,V>> entrySet()
+    2、遍历pairs的集合，得到每一个key-value pair---for each实现，得到每一个Map.Entry
+    3、根据key-value pairs获取key和value---getKey()和getValue()
+
+
+--------------------------
+案例：遍历
+回顾内容
+HashSet集合存储元素----保证元素的唯一性，需要重写hashCode()和equals()
+ //要重写hashCode()方法--command+N+I--equals() and hashCode()--保证内容相同的不再出现
+
+
+--------------------------
+案例：集合嵌套
+（1）ArrayList集合存储HashMap元素并遍历
+
+（2）ArrayList集合存储HashMap元素并遍历
+
+--------------------------
+案例
+统计字符串每个字符出现的次数
