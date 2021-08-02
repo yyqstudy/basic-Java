@@ -1,0 +1,50 @@
+File文件和目录路径名的抽象表示形式
+把文件或者目录（文件夹）都封装成File对象
+对于File来说，其封装的并不是一个真正存在的文件，仅仅是一个路径名而已
+要通过具体操作把这个路径的内容转换为具体存在
+
+构造方法名
+File(String pathname) :将一个给定的字符串路径转换为抽象路径来创建新的File实例
+eg.
+File f1 = new File("/Users/yyq/Desktop/bs4/java.txt");
+System.out.println(f1.createNewFile());
+
+File(String parent,String child):传入一个父级路径和子级路径字符串创建新的File类型
+File(File parent,String child):传入一个父级抽象路径和子级路径字符串创建新的File类型
+
+--------------------
+创建方法
+boolean createNewFile():指定路径不存在该文件时时创建新的空白文件
+          如果文件不存在，就创建而且，返回true,
+          如果文件存在，就不创建文件，否则返回false
+boolean mkdir():当指定的单级文件夹不存在时创建File并返回true，否则返回false
+boolean mkdirs():当指定的多级文件夹某一级文件夹不存在时,创建多级文件夹并返回true,否则返回false
+判断文件类型不能看path，要看创建时候所用的方法
+--------------------
+判断和获取方法
+boolean isDirectory():判断当前的目录是否存在
+boolean isFile():判断当前路径是否是一个文件
+boolean exists():判断指定路径的文件或文件夹是否存在
+String getAbsolutePath():获取文件的绝对路径,返回路径的字符串
+String getPath():获取File对象中封装的路径
+String getName():获取文件或文件夹的名称
+String[] list():以字符串数组的形式返回当前路径下所有的文件和文件夹的名称
+File[] listFiles():以File对象的形式返回当前路径下所有的文件和文件夹的名称
+
+
+--------------------
+删除
+boolean delete():删除文件或者删除单级文件夹
+
+绝对路径和相对路径的区别：
+绝对路径：完整的路径名，不需要其它信息就可以定位它所表示的文件，例如：/Users/yyq/Desktop/bs4/headfirstJava.txt
+相对路径：必须使用取自其它路径名的信息进行解释，例如：bs4/headfirstJava.txt
+
+如果目录下有内容--不能直接delete目录，要先把内容删掉，再删掉目录
+
+--------------------
+案例：遍历目录---File和递归结合
+list()方法是返回某个目录下的所有文件和目录的文件名，返回的是String数组
+
+listFiles()方法是返回某个目录下所有文件和目录的绝对路径，返回的是File数组
+
