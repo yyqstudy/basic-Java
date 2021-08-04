@@ -1,4 +1,9 @@
-字节流写数据
+字节流
+
+
+-------------------------
+写数据
+～～～～～～～～～～～～～～～
 
 字节流抽象类
 InputStream 是所有字节输入流的所有类的超类--抽象类
@@ -9,5 +14,141 @@ FileOutputStream(String name):创建文件输出流以指定的名称写入文�
 
 使用字节输出流写数据步骤：
 1、创建字节输出流对象（实现了3个功能：调用系统功能创建了文件；创建字节输出流对象；让字节输出流对象指向文件）
+  格式：
+  FileOutputStream fos = new FileOutputStream("url");
 2、调用字节输出流对象的写数据方法
 3、释放资源（关闭文件输出流，释放与此流相关联的任何系统资源）
+
+-------------------------
+字节流写数据的三种方式
+构造方法：
+FileOutputStream(String name):创建文件输出流以指定的名称写入文件
+FileOutputStream(File file):创建文件输出流以写入由指定的File对象表示的文件
+
+🌟🌟🌟这两种构造方法--查看源码--原理是一样的
+
+三种方式
+void write(int b):将指定的字节写入此文件输出流，一次写一个🌟字节🌟数据
+void write(byte[] b)：将b.length字节从指定的字节数组写入此文件输出流，一次写一个🌟字节数组🌟数据
+void write(byte[] b,int off,int len)：将len字节从指定的字节数组开始，从偏移量off开始写入此文件输出流，一次写一个字节数组的部分数据
+
+-------------------------
+字节流写数据的两个小问题
+如何实现换行？
+windows:\r\n
+linux:\n
+mac:\r
+
+如何实现追加写入？
+public FileOutputStream(String name, boolean append)
+创建文件输出流以指定的名称写入文件
+如果第二个参数boolean append为true，则字节将写入文件的末尾而不是开头
+
+
+-------------------------
+字节流写数据异常处理
+
+finally:在异常处理时候提供finally块来执行所有清除操作。比如说IO流中的释放资源
+特点：被finally控制的语句一定会执行，除非JVM退出
+
+   try{
+      可能出现异常的代码；
+   }catch(异常类名  变量名){
+      异常的处理代码；
+   }finally{
+      执行所有的清除操作；
+   }
+
+
+-------------------------
+读数据
+～～～～～～～～～～～～～～～
+
+读数据（一次读一个字节数据）
+要求：把文件fos.txt的内容读取出来，在console输出
+FileInputStream：从文件系统中的文件获取输入字节
+ FileInputStream(String name):通过打开与实际文件的连接来创建一个FileInputStream，该文件由文件系统中的路径名name命名
+
+
+
+
+使用字节输入流读数据步骤：
+1、创建字节输入流对象FileInputStream(String name)
+   格式：
+   FileInputStream fis = new FileInputStream("url");
+2、调用字节输入流对象的读数据方法---int read():从输入流读取一个字节的数据
+3、释放资源
+    格式范例：
+
+        int by;
+        while((by=fis.read()) != -1){
+            System.out.print((char)by);
+        }
+
+-------------------------
+案例：复制文本文件
+要求：把"/Users/yyq/Desktop/bs4/fos.txt"复制到/Users/yyq/Desktop目录下面
+
+分析：
+1、复制文本文件，其实就是把文本文件内容从一个文件中读取出来（数据源），然后写入另一个文件（目的地）
+2、数据源：
+   /Users/yyq/Desktop/bs4/fos.txt --- 读数据 --- InputStream --- FileInputStream
+3、目的地：
+   /Users/yyq/Desktop/fos.txt --- 写数据 --- OutputStream  --- FileOutputStream
+
+思路：
+1、根据数据源创建字节输入流对象
+2、根据目的地创建字节输出流对象
+3、读写数据，复制文本文件（一次读取一个字节，一次写入一个字节）
+4、释放资源
+
+🌟🌟🌟总结，比Demo05多了 FileOutputStream fos和 fos.write();
+
+-------------------------
+字节流读数据（一次读一个字节数组）
+
+要求：把文件fos.txt的内容读取出来，在console输出
+
+使用字节输入流读数据步骤：
+1、创建字节输入流对象FileInputStream(String name)
+   格式：
+   FileInputStream fis = new FileInputStream("url");
+2、调用字节输入流对象的读数据方法---int read(byte[] b):从输入流读取最多b.length个字节的数据到一个字节数组
+  byte[] bys = new byte[1024];//1024及其整数倍
+  int len;
+  while((len= fis.read(bys) )!= -1){
+        System.out.print(new String(bys,0,len));//0是索引，len是数组实际长度
+  }
+3、释放资源
+-------------------------
+案例：字节流复制图片
+
+要求：把"/Users/yyq/Desktop/bs4/wherehtml.png"复制到/Users/yyq/Desktop目录下面
+
+思路：
+1、根据数据源创建字节输入流对象
+2、根据目的地创建字节输出流对象
+3、读写数据，复制文本文件（一次读取一个字节数组，一次写入一个字节数组）
+4、释放资源
+-------------------------
+字节缓冲流
+BufferOutputStream:缓冲输出流--应用程序可以向底层输出流写入字节
+BufferInputStream：创建内部缓冲区数组--当从stream中读取或者跳过字节时候，内部缓冲区将根据需要从所包含当输入流中重新填充，一次很多字节
+
+构造方法：
+字节缓冲输出流：BufferOutputStream(OutputStream out)
+字节缓冲输入流：BufferInputStream(InputStream in)
+
+为什么构造方法需要字节流而不是具体file或者path？
+字节缓冲流仅仅提供缓冲区，而真正当读写数据还是依靠字节流对象操作进行
+
+-------------------------
+复制视频
+
+要求：把/Users/yyq/Desktop/23G/快照功能.avi复制到桌面到"/Users/yyq/Desktop/快照功能.avi"
+思路：
+1、根据数据源创建字节输入流对象
+2、根据目的地创建字节输出流对象
+3、读写数据，复制视频
+4、释放资源
+
