@@ -1,0 +1,15 @@
+标准输入输出流
+System类中有两个静态的成员变量：
+public static final InputStream in:标准输入流---对应键盘输入
+public static final PrintStream out:标准输出流---显示输出
+
+自己实现键盘录入数据：
+BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+写起来太麻烦，Java提供一个class实现键盘录入
+ Scanner sc = new Scanner(System.in);
+
+------------------------------------
+
+
+
