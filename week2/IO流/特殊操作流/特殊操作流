@@ -6,10 +6,104 @@ public static final PrintStream out:标准输出流---显示输出
 自己实现键盘录入数据：
 BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
+       //自己封装键盘录入数据
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String line;
+        while((line = br.readLine()) != null){}
+
 写起来太麻烦，Java提供一个class实现键盘录入
  Scanner sc = new Scanner(System.in);
 
+输出语句的本质：是一个标准的输出流
+PrintStream ps = System.out;
+PrintStream类所有的方法---System.out都可以使用
+
 ------------------------------------
+打印流
+------------------------------------
+分类：
+字节打印流：PrintStream
+字符打印流：PrintWriter
 
+打印流特点：
+只负责输出数据，不负责读取数据
+有自己特有方法
 
+字节打印流
+PrintStream(String  fileName):使用指定的文件名创建新的打印流
+使用继承父类的方法写数据，查看时候会转码---write()
+使用自己特有的方法写数据，数据原样输出---print()
 
+------------------------------------
+字符打印流
+PrintWriter(String fileName):使用指定的文件名创建一个新的PrintWriter，而不需要自动执行刷新
+PrintWriter(Writer out, boolean autoFlush):创建一个新的PrintWriter
+                                           out:字符输出流
+                                           autoFlush：一个布尔值，如果为真，则println,printf或者format方法将刷新输出缓冲区
+ ⚠️字符流写数据并不能直接写到文本里面---要通过字节流---如何写入文件---flush()
+
+------------------------------------
+案例：复制Java文件---PrintWriter
+1、根据数据源创建字符输入流对象
+2、根据目的地创建字符输出流对象
+3、读写数据，复制文件
+4、释放资源
+
+------------------------------------
+对象序列化流
+对象序列化：把对象保存到磁盘，或者在网络中传输对象
+使用一个字节序列表示一个对象
+该节序列还可以从文件中读取回来，重构对象，对它反序列化
+
+要实现序列化和反序列化就要使用对象序列化流和对象反序列化流：
+对象序列化流：ObjectOutputStream
+对象反序列化流：ObjectInputStream
+
+对象序列化流：ObjectOutputStream
+   将Java对象的原始数据类型和图形写入OutputStream。可以使用ObjectInputStream读取（重构）对象。可以通过使用流的文件来实现对象的持久存储。
+
+构造方法：
+   ObjectOutputStream(OutputStream out):创建一个写入指定的OutputStream 的ObjectOutputStream
+
+序列对象化的方法：
+   void writeObject(Object obj):将指定的对象写入ObjectOutputStream
+------------------------------------
+对象反序列化流：ObjectInputStream
+   ObjectInputStream反序列化先前使用ObjectOutputStream编写的原始数据和对象
+
+ 构造方法：
+    ObjectInputStream(InputStream in): 创建指定的InputStream读取的 ObjectInputStream
+
+ 反序列化对象的方法：
+     Object readObject():从ObjectInputStream读取一个对象
+
+------------------------------------
+用对象序列化流序列化一个对象后，假如修改了对象所属的类文件，读取数据会不会出问题？
+---会出问题，抛出InvalidClassException异常
+
+如果出问题了，如何解决？
+---给对象所属的类加一个serialVersionUID
+---private static final long  serialVersionUID = 42L;
+
+如果一个对象中的某个成员变量的值不想被序列化，又该如何实现？
+---给该成员变量加transient关键字修饰，该关键字标记的成员变量不参与序列化过程
+
+------------------------------------
+Properties
+是一个Map体系的集合类
+Properties可以保存到流中或者从流加载
+
+练习：Properties作为Map集合使用
+
+Properties参数类型不能有泛型（比如String），类型是object
+
+------------------------------------
+Properties作为集合特有的方法
+Object setProperty(String key,String value):设置集合的key和value，都是string类型，底层调用Hashtable方法put()
+String getProperty(String key):通过key搜索value
+Set<String> stringPropertyNames()：返回不可修改的key的集合，其中key和value都是String类型
+
+------------------------------------
+Properties和IO流结合的方法
+void load(Reader reader):输入字符流读取key-value
+void store(Writer writer,String comments):将key-value写入Properties表中

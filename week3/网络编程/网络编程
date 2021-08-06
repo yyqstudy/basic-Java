@@ -1,0 +1,64 @@
+UDP发送数据
+1、创建发送端Socket对象（DatagramSocket）
+  DatagramSocket()---此类表示用来发送和接收数据,基于UDP协议的
+2、创建数据并打包
+  DatagramPacket(byte[] buf, int length, InetAddress address, int port)
+3、调用DatagramSocket对象的方法发送数据
+  void send(DatagramPacket p)
+4、关闭发送端
+  void close()
+
+
+InetAddress address--主机
+int port---端口
+
+复习回顾
+getBytes()//数据转成字节数组
+-------------------------
+UDP接收数据
+1、创建接收端Socket对象（DatagramSocket）
+   DatagramSocket(int port)
+2、创建一个数据包，用于接收数据
+   DatagramPacket(byte[] buf, int length)
+3、调用DatagramSocket对象的方法接收数据
+   void receive(DatagramPacket p)
+4、解析数据包，并把数据在console输出
+   byte[] getData()
+   int getLength()
+5、关闭接收端
+   void close()
+
+-------------------------
+案例：UDP通信程序练习
+UDP发送数据：数据来自于键盘录入，直到输入的数据是886，发送数据结束
+UDP接收数据：因为接收端不知道发送端什么时候停止发送，采用死循环接收
+
+-------------------------
+TCP
+传输数据---通过IO流实现
+Java为客户端提供Socket类，为服务器端提供ServerSocket类
+
+TCP发送数据
+1、创建客户端的Socket对象（Socket）
+   Socket(String host,int port)
+2、获取输出流，写数据---网络传送的数据，各种各样都有---要用字节流--字节输出流--OutputStream
+  getOutputStream()
+3、释放资源
+  close()
+
+补充知识点：
+构造方法（连接到主机（IP地址）的端口两种方法）：
+        Socket(InetAddress address,int port)
+        Socket(String host,int port)
+
+
+-------------------------
+TCP接收数据
+1、创建服务器端的Socket对象（ServerSocket）
+   ServerSocket(int port)
+2、监听客户端连接，返回一个Socket对象---因为ServerSocket 没有直接获取InputStream的方法---所以要ServerSocket与Socket联系起来
+  Socket accept()
+3、获取输入流，读数据，并把数据显示在console
+  Socket中的InputStream getInputStream()
+4、释放资源
+   close()

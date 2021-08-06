@@ -13,7 +13,7 @@ public class Demo01_SystemIn {
 
         int by;
         while((by=is.read())!= -1){
-            System.out.println((char)by);
+            System.out.print((char)by);
         }
     }
 }
