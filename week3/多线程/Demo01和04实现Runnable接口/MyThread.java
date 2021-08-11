@@ -1,4 +1,4 @@
-package week3.多线程.Demo01;
+package week3.多线程.Demo01和04实现Runnable接口;
 
 public class MyThread extends Thread{
     @Override

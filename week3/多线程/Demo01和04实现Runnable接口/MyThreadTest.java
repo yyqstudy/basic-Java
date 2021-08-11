@@ -1,6 +1,4 @@
-package week3.多线程.Demo01;
-
-import week3.多线程.Demo01.MyThread;
+package week3.多线程.Demo01和04实现Runnable接口;
 
 public class MyThreadTest {
     public static void main(String[] args) {

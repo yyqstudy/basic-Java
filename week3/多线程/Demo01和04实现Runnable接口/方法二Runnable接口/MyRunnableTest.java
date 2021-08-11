@@ -1,4 +1,4 @@
-package week3.多线程.Demo01.方法二Runnable接口;
+package week3.多线程.Demo01和04实现Runnable接口.方法二Runnable接口;
 
 public class MyRunnableTest {
     public static void main(String[] args) {

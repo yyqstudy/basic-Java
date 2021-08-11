@@ -6,7 +6,7 @@ public static final PrintStream out:标准输出流---显示输出
 自己实现键盘录入数据：
 BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-       //自己封装键盘录入数据
+       //自己封装键盘录入数据（字符输入流）
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String line;
         while((line = br.readLine()) != null){}

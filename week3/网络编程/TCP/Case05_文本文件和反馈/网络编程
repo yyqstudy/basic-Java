@@ -107,4 +107,15 @@ BufferedWriter bw = new BufferedWriter(new FileWriter("./week3/网络编程/TCP/
 -------------------------
 案例四：
 客户端：数据来自于文本文件
+      封装文本文件的数据
+         BufferedReader br = new BufferedReader(new FileReader("./week3/网络编程/TCP/Case04_客户端来自于文本文件/网络编程"));
+
 服务器：接收到的数据写入文本文件
+
+
+-------------------------
+案例五
+客户端：数据来自于文本文件，接收服务器反馈
+服务器：接收到的数据写入文本文件，给出反馈
+
+-------------------------
